@@ -1,7 +1,6 @@
 # devnews
 
-This App called Dev News is a flutter project for deliver most imported news to you.
-
+This App called <b>Dev News </b>is a flutter project for deliver most imported news to you by api.
 
 Screenshots of the Dev news application:
 
