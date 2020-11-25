@@ -40,5 +40,8 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# By Pcoder
-/windows/flutter/ephemeral/
+# pixiedev
+/lib/key/key.dart
+/lib/helper/data.dart
+/lib/models/categorie_model.dart
+bin.dart

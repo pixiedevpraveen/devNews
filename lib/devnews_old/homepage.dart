@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
-// import 'dart:html';
 import 'package:http/http.dart' as http;
+import 'package:devnews/key/key.dart';
+// import 'dart:html';
 
-import 'package:devnews/newspage.dart';
+import 'package:devnews/devnews_old/newspage.dart';
 
-import 'appbar.dart';
-import 'drawer.dart'; // drink Detail
+import 'package:devnews/devnews_old/widgets/widgets.dart'; // drink Detail
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final appTitle = "Dev News";
   var apiLink =
-      "http://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=53c1ce6459854f7893bee3202dc16895";
+      "https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=$apiKey";
   var res, newsApiOb;
 
   @override
@@ -56,11 +56,11 @@ class _HomePageState extends State<HomePage> {
                         leading: Hero(
                           tag: article["title"],
                           child: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                    article["urlToImage"]) ??
-                                Image(
-                                    image: AssetImage(
-                                        'assets/images/image-not-found.jpg')),
+                            backgroundImage:
+                                NetworkImage(article["urlToImage"]) ??
+                                    Image(
+                                        image: AssetImage(
+                                            'assets/images/image-not-found.jpg')),
                           ),
                         ),
                         title: Text(
@@ -75,8 +75,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>
-                                    NewsPage(article: article),
+                                builder: (context) => NewsPage(article: article),
                                 fullscreenDialog: true,
                               ));
                         },
